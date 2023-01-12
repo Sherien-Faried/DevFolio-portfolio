@@ -1,0 +1,246 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+:root{
+    --main-color: #0078ff;
+    --op-color: #0077ffb7;
+    --p-color: #4e4e4e;
+    --title-color:#1e1e1e ;
+    --font-size:0.85rem;
+}
+.font-size{
+    font-size: var(--font-size);
+}
+.main-color{
+    color: var(--main-color);
+}
+.bg-main-color{
+    background-color: var(--main-color);
+}
+.bg-op{
+    background-color: var(--op-color);
+}
+.p-color{
+    color: var(--p-color);
+}
+.title-color{
+    color: var(--title-color);
+}
+
+a{
+    color: inherit !important;
+    text-decoration: none;
+}
+
+.header p::after{
+    content: '';
+    position: absolute;
+    background-color: var(--main-color);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    width: 40px; 
+    height: 5px;
+}
+
+/* =============nav================ */
+.nav-item a::after{
+    content: '';
+    position: absolute;
+    background-color: var(--main-color);
+    left: 0;
+    bottom: 0px;
+    width: 0; 
+    height: 2px;
+    transition: width 1s;
+}
+.nav-item a:hover::after{
+    width: 50px;
+}
+
+.navbar-toggler:focus  {
+    box-shadow: none;
+}
+/* 
+.navbar-toggler span {
+    display: block;
+    background-color: #fff;
+    height: 5px;
+    width: 25px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(0deg);
+    left: 0;
+    opacity: 1;
+}
+.navbar-toggler .x span{
+    opacity: 0;
+}
+
+.navbar-toggler:focus span {
+    opacity: 0;
+}
+
+.navbar-toggler .x span{
+    margin-top: 7px;
+    transition: transform 1s ;
+}
+.navbar-toggler:focus .x span:nth-child(1){
+    transform: rotate(45deg) ;
+    opacity: 1;
+}
+.navbar-toggler:focus  .x span:nth-child(2){
+    transform: rotate(-45deg) ;
+    opacity: 1;
+} */
+
+
+
+/* ===========home================ */
+#home{
+    background-image: url(../img/intro-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+#home .bg-overlay{
+    inset: 0;
+}
+#home .content h1{
+    font-size: 4.5rem;
+}
+/* =========================================== */
+
+/* =================about================== */
+
+#about h5::after, #contact .container h5::after{
+    content: '';
+    position: absolute;
+    background-color: var(--main-color);
+    left: 0;
+    bottom: -12px;
+    width: 100px; 
+    height: 3px;
+}
+
+@media screen and (max-width:576px){
+    #about .container img{
+        width: 40% !important;
+    }
+}
+
+/* ============================================= */
+
+/* ==============service================== */
+
+#service .icon{
+    width: 100px;
+    height: 100px;
+    border: 10px solid var(--main-color);
+}
+#service .footer .icon{
+    width: 70px;
+    height: 70px;
+    border: 10px solid #fff;
+}
+
+#service .footer{
+    background-image: url(../img/counters-bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* ===================================================================== */
+    
+/* ===================work===================== */
+
+#work .item img{
+    transition: transform 1s;
+}
+#work .item:hover img{
+    transform: scale(1.2, 1.2);
+}
+
+#work .footer, #contact{
+    background-image: url(../img/overlay-bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#work .icon {
+    width: 35px;
+    height: 35px;
+    font-size: 2rem;
+    border: 2px solid var(--main-color);
+}
+
+
+.carousel-indicators [data-bs-target]{
+    width: 15px;
+    height: 8px;
+    border: 5px solid transparent;
+    transition: width 1s;
+}
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: var(--main-color);
+    border: 3px solid #fff;
+    width: 20px;
+}
+
+/* ===================================================== */
+
+/* ========================blog=============================== */
+
+#blog .container a{
+    transition: color 1s;
+}
+#blog .container a:hover{
+    color: var(--main-color) !important;
+}
+
+/* ===================================================== */
+
+/* ========================contact=============================== */
+
+#contact form input, #contact form textarea{
+    transition: border-color 1s, box-shadow 1s;
+}
+#contact form input:focus, #contact form textarea:focus{
+    outline:none;
+    border-color: var(--main-color);
+    box-shadow: 0px 0px 5px var(--main-color);
+    
+}
+
+#contact .icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border: 3px solid var(--main-color);
+    transition-property:background-color, color,  border-color;
+    transition-duration: 0.5s;
+}
+#contact .icon:hover{
+    background-color: var(--main-color);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.585);
+}
+
+#contact form button{
+    border: 5px solid #fff ;
+    transition: border-color 1s;
+}
+#contact form button:hover{
+border-color:rgba(255, 255, 255, 0.585);
+}
